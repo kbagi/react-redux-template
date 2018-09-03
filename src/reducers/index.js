@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import info from "./info"
+import info from "./main"
 
 // export default combineReducers({
 //     info: base

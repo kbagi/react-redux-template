@@ -1,4 +1,4 @@
-import { ActionTypes } from "../actions/index"
+import { ActionTypes } from "../actions"
 
 const info = (state = "", action) => {
     switch (action.type) {
