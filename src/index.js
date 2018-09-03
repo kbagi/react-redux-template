@@ -7,6 +7,7 @@ import rootReducer from './reducers'
 
 const store = createStore(
   rootReducer,
+  {info:null},
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 render(

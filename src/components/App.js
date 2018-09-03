@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+
 import logo from '../logo.svg';
 import './App.css';
+import Info from '../containers/Info'
+import { showInfo } from '../actions';
 
 class App extends Component {
   render() {
@@ -10,12 +15,23 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <button onClick={this.props.onClick}>Show info</button>
+        <Info></Info>
       </div>
     );
   }
 }
 
-export default App;
+App.propTypes = {
+  onClick: PropTypes.func.isRequired
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  onClick: () => dispatch(showInfo("template app"))
+})
+
+const mapStateToProps = (state, ownProps) => ({
+  
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
